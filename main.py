@@ -12,9 +12,8 @@ from datetime import datetime, timedelta
 
 def viewBooks():
     for book in library_books:
-        if(book[4] == True):
-            print(f"Book Id: {book["id"]}\n Title: {book["title"]}\n Book Author: {book["author"]}\n")
-viewBooks()
+        if(book["available"] == True):
+            print(f"Book Id: {book["id"]}\nTitle: {book["title"]}\nBook Author: {book["author"]}\n")
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
