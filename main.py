@@ -5,12 +5,29 @@ from datetime import datetime, timedelta
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
 
+# Pseudocode
+# for book in library books:
+#    if book avalible:
+#      print book
 
+def viewBooks():
+    for book in library_books:
+        if(book[4] == True):
+            print(f"Book Id: {book["id"]}\n Title: {book["title"]}\n Book Author: {book["author"]}\n")
+viewBooks()
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
 # Return a list of matching books
 
+# Pseudocode
+# parameter userSearch
+# listOfBooks = ""
+# userSearch to lower case
+# for book in library books:
+#    if book title to lower case = userSearch or book author to lower case = userSearch:
+#      listOfBooks += book
+# return listOfBooks
 
 # -------- Level 3 --------
 # TODO: Create a function to checkout a book by ID
@@ -20,6 +37,20 @@ from datetime import datetime, timedelta
 #   - Increment the checkouts counter
 # If it is not available:
 #   - Print a message saying it's already checked out
+
+# Pseudocode
+# parmeters enteredId
+# for book in libray books:
+#    if book id = enterId:
+#          if book avaliable:
+#             book avaliable = false
+#             book due date = 2 weeeks from now
+#             book checkout counter += 1
+#             return
+#          else:
+#             print error meassege
+#             return
+# print error message
 
 
 # -------- Level 4 --------
