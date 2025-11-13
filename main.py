@@ -11,10 +11,10 @@ from datetime import datetime, timedelta
 #      print book
 
 def viewBooks():
-    for book in library_books:
-        if(book["available"] == True):
-            print(f"Book Id: {book["id"]}\nTitle: {book["title"]}\nBook Author: {book["author"]}\n")
-# -------- Level 2 --------
+    for book in library_books: # iterarte through ibrary_books
+        if(book["available"] == True): # check if the book is available
+            print(f"Book Id: {book["id"]}\nTitle: {book["title"]}\nBook Author: {book["author"]}\n") # print out book information
+
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
 # Return a list of matching books
@@ -29,11 +29,11 @@ def viewBooks():
 # return listOfBooks
 
 def search(userSearch):
-    listOfBooks = []
-    for book in library_books:
-        if(book["genre"].lower() == userSearch.lower() or book["author"].lower() == userSearch.lower()):
-            listOfBooks += book
-    return listOfBooks
+    listOfBooks = [] # declare a variable for the list of books we will return
+    for book in library_books: # iterate through library_books
+        if(book["genre"].lower() == userSearch.lower() or book["author"].lower() == userSearch.lower()): # check if the books author or genre equals the users input
+            listOfBooks += book # add the current book to list of books
+    return listOfBooks # returns the list of books
 
 # -------- Level 3 --------
 # TODO: Create a function to checkout a book by ID
