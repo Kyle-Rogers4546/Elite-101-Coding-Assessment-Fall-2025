@@ -24,9 +24,16 @@ def viewBooks():
 # listOfBooks = ""
 # userSearch to lower case
 # for book in library books:
-#    if book title to lower case = userSearch or book author to lower case = userSearch:
+#    if book genre to lower case = userSearch or book author to lower case = userSearch:
 #      listOfBooks += book
 # return listOfBooks
+
+def search(userSearch):
+    listOfBooks = []
+    for book in library_books:
+        if(book["genre"].lower() == userSearch.lower() or book["author"].lower() == userSearch.lower()):
+            listOfBooks += book
+    return listOfBooks
 
 # -------- Level 3 --------
 # TODO: Create a function to checkout a book by ID
