@@ -58,7 +58,19 @@ def search(userSearch):
 #             return
 # print error message
 
-
+def checkOutBook(bookId):
+    for book in library_books: # iterate through libray books
+        if(book["id"] == bookId): # check if the inserted id is equal to a books i
+            if (book["available"] == True): # checks if the book is avaliable
+                book["available"] = False # makes the book unavliable
+                book["due_date"] = datetime.now() + timedelta(days=14) # sets the due date for the book 2 weeks from now
+                book["checkouts"] += 1 # adds one to the books checkoouts
+                return
+            else:
+                print("That book is already checked.") # prints a message about book being checked out
+                return
+        else:
+            print("There is no book with that id.") # prints a error message
 # -------- Level 4 --------
 # TODO: Create a function to return a book by ID
 # Set its availability to True and clear the due_date
@@ -81,4 +93,7 @@ def search(userSearch):
 
 if __name__ == "__main__":
     # You can use this space to test your functions
+    checkOutBook("B1")
+    checkOutBook("B2")
+    checkOutBook("B1")
     pass
